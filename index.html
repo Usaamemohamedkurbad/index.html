@@ -1,69 +1,190 @@
-.
-🌐 Usame Mahamed Kurbatt — Official Website
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official website of Usame Mahamed Kurbatt — Health Information Technology student focused on digital health, DHIS2, healthcare data, information systems and IT.">
+  <title>Usame Mahamed Kurbatt | Health Information Technology</title>
+  <style>
+    :root{
+      --bg:#07111f;--bg2:#0d1b2e;--card:rgba(255,255,255,.06);--text:#f5f7fb;
+      --muted:#a9b5c7;--accent:#39d98a;--accent2:#39a0ff;--border:rgba(255,255,255,.11);
+      --shadow:0 20px 60px rgba(0,0,0,.28);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+      radial-gradient(circle at 85% 10%,rgba(57,160,255,.16),transparent 28%),
+      radial-gradient(circle at 10% 20%,rgba(57,217,138,.10),transparent 25%),var(--bg);
+      color:var(--text);line-height:1.7}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px,92%);margin:auto}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(7,17,31,.78);
+      backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-weight:800;font-size:1.05rem;letter-spacing:.4px}.logo span{color:var(--accent)}
+    .links{display:flex;gap:25px;align-items:center}.links a{color:var(--muted);font-size:.94rem}
+    .links a:hover{color:var(--text)}
+    .menu{display:none;background:none;border:1px solid var(--border);color:var(--text);padding:7px 10px;border-radius:10px;font-size:1.2rem}
+    .hero{min-height:100vh;display:grid;place-items:center;padding:120px 0 70px}
+    .hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:55px;align-items:center}
+    .badge{display:inline-flex;padding:7px 13px;border:1px solid rgba(57,217,138,.35);border-radius:999px;
+      background:rgba(57,217,138,.08);color:#8ff0ba;font-size:.84rem;margin-bottom:18px}
+    h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.05;letter-spacing:-2px;margin-bottom:18px}
+    h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;color:transparent}
+    .hero p{font-size:1.08rem;color:var(--muted);max-width:680px}
+    .buttons{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+    .btn{padding:12px 19px;border-radius:12px;border:1px solid var(--border);font-weight:700}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),#27b9a8);color:#06120e;border:none}
+    .btn.secondary{background:var(--card)}
+    .profile-card{background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.035));
+      border:1px solid var(--border);border-radius:28px;padding:28px;box-shadow:var(--shadow)}
+    .avatar{height:240px;border-radius:22px;display:grid;place-items:center;
+      background:linear-gradient(145deg,#102d47,#0d5d54);font-size:5rem;font-weight:900}
+    .mini{margin-top:18px;color:var(--muted);font-size:.9rem}.mini strong{color:var(--text)}
+    section{padding:95px 0}.section-title{font-size:2rem;margin-bottom:10px}.section-sub{color:var(--muted);max-width:720px;margin-bottom:30px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:25px;box-shadow:0 12px 35px rgba(0,0,0,.12)}
+    .card h3{margin-bottom:8px}.card p,.card li{color:var(--muted)}.card ul{padding-left:18px}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .skill{margin:13px 0}.skill-top{display:flex;justify-content:space-between;color:var(--muted);font-size:.9rem}
+    .bar{height:8px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden;margin-top:7px}
+    .bar i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px}
+    .timeline{border-left:2px solid rgba(57,217,138,.35);padding-left:22px}.timeline-item{margin-bottom:24px;position:relative}
+    .timeline-item:before{content:"";position:absolute;left:-29px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--accent)}
+    .tag{display:inline-block;padding:5px 10px;border-radius:999px;background:rgba(57,160,255,.1);color:#83c6ff;margin:4px;font-size:.82rem}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .contact a{color:#83c6ff;word-break:break-word}
+    footer{padding:28px 0;border-top:1px solid var(--border);color:var(--muted);text-align:center}
+    #top{position:fixed;right:18px;bottom:18px;border:1px solid var(--border);background:var(--bg2);color:var(--text);
+      width:44px;height:44px;border-radius:50%;display:none;cursor:pointer;font-size:1.1rem}
+    @media(max-width:800px){
+      .links{display:none;position:absolute;top:72px;left:0;right:0;background:var(--bg2);padding:20px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--border)}
+      .links.open{display:flex}.menu{display:block}
+      .hero-grid,.about,.contact{grid-template-columns:1fr}.grid{grid-template-columns:1fr}
+      .hero{padding-top:110px}.avatar{height:190px}section{padding:70px 0}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a class="logo" href="#home">USAME<span>.</span></a>
+      <button class="menu" aria-label="Open menu">☰</button>
+      <div class="links">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#education">Education</a>
+        <a href="#skills">Skills</a><a href="#projects">Interests</a><a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-🏠 Home
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">🌐 Official Personal Website</div>
+          <h1>Usame Mahamed<br><span>Kurbatt</span></h1>
+          <p><strong>Health Information Technology Student</strong> focused on digital health, healthcare data, DHIS2, health information systems, IT and programming.</p>
+          <div class="buttons">
+            <a class="btn primary" href="#about">Explore My Profile</a>
+            <a class="btn secondary" href="#contact">Contact Me</a>
+          </div>
+        </div>
+        <div class="profile-card">
+          <div class="avatar">UMK</div>
+          <div class="mini"><strong>Based in Ethiopia</strong><br>Jigjiga Health Science College<br>Health Information Technology</div>
+        </div>
+      </div>
+    </section>
 
-USAME MAHAMED KURBATT
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-sub">Learning, developing and contributing to the future of digital health through technology and reliable health information.</p>
+        <div class="about">
+          <div class="card">
+            <h3>👨‍💻 Who I Am</h3>
+            <p>I am a Health Information Technology student at Jigjiga Health Science College, Ethiopia. I am interested in how technology and quality health information can support better healthcare services and decisions.</p>
+          </div>
+          <div class="card">
+            <h3>🎯 My Vision</h3>
+            <p>To build strong skills in health information systems and digital health and use them to contribute to efficient, data-driven healthcare.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-Health Information Technology Student | Digital Health & Health Information
+    <section id="education">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <p class="section-sub">My current academic journey.</p>
+        <div class="card timeline">
+          <div class="timeline-item">
+            <h3>Health Information Technology — Level IV</h3>
+            <p>Jigjiga Health Science College · Ethiopia</p>
+            <p>Focus areas include health information systems, healthcare data, documentation, digital health and information technology.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-Welcome to the official website of Usame Mahamed Kurbatt, a Health Information Technology student at Jigjiga Health Science College, Ethiopia.
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Skills & Focus Areas</h2>
+        <p class="section-sub">Areas I am developing through study and practical learning.</p>
+        <div class="about">
+          <div class="card">
+            <div class="skill"><div class="skill-top"><span>Health Information Technology</span><span>Learning</span></div><div class="bar"><i style="--w:82%"></i></div></div>
+            <div class="skill"><div class="skill-top"><span>Health Information Systems</span><span>Learning</span></div><div class="bar"><i style="--w:76%"></i></div></div>
+            <div class="skill"><div class="skill-top"><span>DHIS2 & Healthcare Data</span><span>Learning</span></div><div class="bar"><i style="--w:70%"></i></div></div>
+            <div class="skill"><div class="skill-top"><span>IT & Programming</span><span>Developing</span></div><div class="bar"><i style="--w:62%"></i></div></div>
+          </div>
+          <div class="card">
+            <h3>Core Interests</h3>
+            <span class="tag">Digital Health</span><span class="tag">DHIS2</span><span class="tag">Healthcare Data</span>
+            <span class="tag">Health Information Systems</span><span class="tag">IT</span><span class="tag">Programming</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-Learning, developing, and contributing to the future of digital health and health information systems.
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Learning & Projects</h2>
+        <p class="section-sub">A space for future projects, certificates and achievements.</p>
+        <div class="grid">
+          <div class="card"><h3>📊 DHIS2</h3><p>Exploring digital health reporting, health data and information systems.</p></div>
+          <div class="card"><h3>💻 IT & Programming</h3><p>Building practical technology skills and learning how software can support healthcare.</p></div>
+          <div class="card"><h3>📚 Continuous Learning</h3><p>Developing knowledge through academic study, revision, practice and practical projects.</p></div>
+        </div>
+      </div>
+    </section>
 
-Explore My Profile →
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-sub">Professional links can be added here as your portfolio grows.</p>
+        <div class="contact">
+          <div class="card"><h3>📧 Email</h3><p>Add your professional email here.</p></div>
+          <div class="card"><h3>🔗 Social & Professional</h3><p>Add your LinkedIn, Facebook, Instagram or TikTok links here.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-⸻
+  <footer>
+    <div class="container">© <span id="year"></span> Usame Mahamed Kurbatt · Health Information Technology</div>
+  </footer>
+  <button id="top" aria-label="Back to top">↑</button>
 
-👤 About Me
-
-Usame Mahamed Kurbatt is a Health Information Technology student at Jigjiga Health Science College in Ethiopia.
-
-He is interested in the intersection of healthcare and technology, particularly health information management, digital health, healthcare data, and information systems.
-
-His academic interests include DHIS2, health statistics, data management, health information systems, data quality, reporting, and healthcare communication.
-
-He is continuously developing his knowledge and technical skills with the goal of contributing to effective and reliable health information services.
-
-⸻
-
-🎓 Education
-
-Jigjiga Health Science College
-Department: Health Information Technology (HIT)
-Location: Jigjiga, Ethiopia
-
-⸻
-
-💻 Areas of Interest
-	•	Health Information Technology
-	•	Digital Health
-	•	Health Information Management
-	•	Healthcare Data Management
-	•	DHIS2
-	•	Health Statistics
-	•	Health Information Systems
-	•	Data Quality & Reporting
-	•	Information Technology
-
-⸻
-
-📚 Academic Focus
-
-My studies and learning focus on understanding how technology and reliable information can support healthcare services.
-
-I am particularly interested in:
-
-Healthcare → Data → Information → Technology → Better Decisions
-
-⸻
-
-📞 Contact
-
-For professional or academic communication:
-
-Name: Usame Mahamed Kurbatt
-Field: Health Information Technology
-Location: Ethiopia
-
-Official social-media and contact links can be added here.
+  <script>
+    const menu=document.querySelector('.menu'), links=document.querySelector('.links');
+    menu.addEventListener('click',()=>links.classList.toggle('open'));
+    document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+    document.getElementById('year').textContent=new Date().getFullYear();
+    const top=document.getElementById('top');
+    window.addEventListener('scroll',()=>top.style.display=scrollY>500?'block':'none');
+    top.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+  </script>
+</body>
+</html>
